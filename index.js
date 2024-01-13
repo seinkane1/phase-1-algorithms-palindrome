@@ -1,18 +1,22 @@
-function isPalindrome(word) {
-  // Write your algorithm here
-}
-
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
+function isPalindrome(string) {
+    const lowercaseString = string.toLowerCase();
+    const lettersOnlyString = lowercaseString.replace(/[^a-z]/g, '');
+  
+    let left = 0;
+    let right = lettersOnlyString.length - 1;
+  
+    while (left <= right) {
+      if (lettersOnlyString[left] !== lettersOnlyString[right]) {
+        return false;
+      }
+      left++;
+      right--;
+    }
+  
+    return true;
+  }
 if (require.main === module) {
-  // add your own custom tests in here
+
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
 
